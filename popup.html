@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    /* Gruvbox Dark Theme */
+    body {
+      width: 320px;
+      padding: 20px;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace, system-ui;
+      background: #282828;
+      color: #ebdbb2;
+    }
+    
+    .container {
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 20px;
+      margin: 0 0 20px 0;
+      color: #fb4934;
+      font-weight: bold;
+      font-family: "Comic Sans MS", "Comic-Sans-MS", sans-serif;
+    }
+    
+    .download-btn {
+      background: #b8bb26;
+      color: #282828;
+      border: 2px solid #98971a;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 15px;
+      font-weight: bold;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    
+    .download-btn:hover {
+      background: #98971a;
+      color: #fbf1c7;
+      border-color: #79740e;
+    }
+    
+    .download-btn:disabled {
+      background: #665c54;
+      color: #a89984;
+      border-color: #504945;
+      cursor: not-allowed;
+    }
+    
+    .status {
+      font-size: 14px;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      border-left: 4px solid;
+      background: #3c3836;
+      color: #83a598;
+      border-left-color: #458588;
+      display: none;
+      text-align: left;
+    }
+    
+    .status.error {
+      background: #3c3836;
+      color: #fb4934;
+      border-left-color: #cc241d;
+    }
+    
+    .status.success {
+      background: #3c3836;
+      color: #b8bb26;
+      border-left-color: #98971a;
+    }
+    
+    .file-count {
+      font-size: 12px;
+      color: #a89984;
+      margin-top: 10px;
+      font-style: italic;
+    }
+    
+    .options {
+      margin-top: 15px;
+      text-align: left;
+      background: #3c3836;
+      padding: 15px;
+      border-radius: 4px;
+      border: 1px solid #504945;
+    }
+    
+    .option {
+      margin-bottom: 12px;
+    }
+    
+    .option:last-child {
+      margin-bottom: 0;
+    }
+    
+    .option label {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      color: #d5c4a1;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    
+    .option label:hover {
+      color: #fabd2f;
+    }
+    
+    .option input[type="checkbox"] {
+      margin-right: 10px;
+      width: 16px;
+      height: 16px;
+      accent-color: #fe8019;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>😈 evil downloader</h1>
+    
+    <div class="options">
+      <div class="option">
+        <label>
+          <input type="checkbox" id="prettifyJs" checked>
+          prettify javascript files
+        </label>
+      </div>
+      <div class="option">
+        <label>
+          <input type="checkbox" id="includeInline" checked>
+          include inline scripts
+        </label>
+      </div>
+    </div>
+    
+    <button id="downloadBtn" class="download-btn">
+      📥 download assets
+    </button>
+    
+    <div id="status" class="status"></div>
+    <div id="fileCount" class="file-count"></div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
