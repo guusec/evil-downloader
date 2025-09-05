@@ -4,7 +4,7 @@ Download and beautify all JS and HTML from any webpage.
 
 ## Installation
 
-### Chromium (only tested on brave)
+### Chromium
 1. Go to `chrome://extensions/`
 2. Enable "Developer mode" 
 3. Click "Load unpacked" and select this folder
